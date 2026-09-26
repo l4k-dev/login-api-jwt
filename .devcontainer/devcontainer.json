@@ -1,0 +1,6 @@
+{
+    "name": "Teste React",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "frontend",
+    "workspaceFolder": "/app"
+}

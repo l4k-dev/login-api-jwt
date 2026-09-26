@@ -1,0 +1,20 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+
+# React / Vite
+frontend/node_modules/
+frontend/dist/
+
+# Docker
+docker-compose.override.yml
+
+# Environment
+.env
+.env.*
+!.env.example
