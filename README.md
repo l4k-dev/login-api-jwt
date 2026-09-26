@@ -133,6 +133,38 @@ via seed, caso ainda não exista nenhum usuário no banco:
 > a senha imediatamente ou substitua o seed por dados fornecidos via variável de 
 > ambiente.
 
+## Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto, baseado no `.env.example`:
+
+```env
+DATABASE_NAME=teste_react
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+
+DATABASE_CONNECTION=Host=postgres;Port=5432;Database=teste_react;Username=postgres;Password=postgres
+
+JWT_KEY=your-super-secret-jwt-key-change-me
+JWT_ISSUER=TesteReact
+JWT_AUDIENCE=TesteReact
+
+EMAIL_USERNAME=your-email@example.com
+EMAIL_PASSWORD=your-email-password
+EMAIL_HOST=smtp.example.com
+EMAIL_PORT=587
+```
+
+| Variável | Descrição |
+|---|---|
+| `DATABASE_NAME` / `DATABASE_USER` / `DATABASE_PASSWORD` | Credenciais do PostgreSQL |
+| `DATABASE_CONNECTION` | Connection string completa usada pelo Entity Framework Core |
+| `JWT_KEY` | Chave secreta usada para assinar o JWT (HMAC-SHA256) — **gere uma chave forte e única** |
+| `JWT_ISSUER` / `JWT_AUDIENCE` | Valores de emissor e audiência validados no token |
+| `EMAIL_USERNAME` / `EMAIL_PASSWORD` / `EMAIL_HOST` / `EMAIL_PORT` | Credenciais SMTP usadas pelo MailKit para envio dos códigos de confirmação de dispositivo |
+
+> ⚠️ Nunca utilize credenciais reais no `.env.example` ou diretamente no código-fonte. 
+> O arquivo `.env` deve permanecer fora do Git (já incluído no `.gitignore`).
+
 ## Segurança
 
 - Senhas com BCrypt
@@ -160,8 +192,6 @@ Configure `JWT_KEY` no `.env` (e os dados SMTP, se quiser testar o envio de e-ma
 | Frontend (React/Vite) | 5178 | http://localhost:5178 |
 | API (ASP.NET Core) | 5000 | http://localhost:5000 |
 | Swagger | 5000 | http://localhost:5000/swagger |
-
-**Nunca** utilize credenciais reais no `.env.example` ou no código-fonte — mantenha o `.env` fora do Git.
 
 ## Autor
 
