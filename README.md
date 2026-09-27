@@ -37,7 +37,7 @@ tokens de dispositivo, rate limiting e confirmação de acesso por e-mail.
 | Camada | Tecnologias |
 |---|---|
 | **Backend** | C#, ASP.NET Core Web API, Entity Framework Core, PostgreSQL, JWT, BCrypt, MailKit, Swagger/OpenAPI, Rate Limiting |
-| **Frontend** | React.js, Vite, JavaScript, HTML5, CSS |
+| **Frontend** | React.js, Vite, TypeScript, HTML5, CSS |
 | **Infraestrutura** | Docker, Docker Compose, PostgreSQL |
 
 ## Arquitetura
